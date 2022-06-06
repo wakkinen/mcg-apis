@@ -12,12 +12,12 @@ info:
   contact:
     email: ccsdevelopmentteam@mcg.com
 servers:
-  - url: /v1/
+  - url: /v1
 paths:
   /authorization:
     post:
       tags:
-        - authorization
+        - Authorization
       summary: Create Authorization
       description: Creates a prior authorization in MCG Cite payer system.
       requestBody:
@@ -39,7 +39,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../common/models/problemdetails.v1.yaml
+                $ref: '#/components/schemas/400BadRequest'
         '401':
           $ref: '#/components/responses/401UnAuthorized'
         '403':
@@ -47,7 +47,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../common/models/problemdetails.v1.yaml
+                $ref: '#/components/schemas/400BadRequest'
         '406':
           $ref: '#/components/responses/406NotAcceptable'
         '500':
@@ -62,7 +62,7 @@ paths:
           description: The authorization id
     get:
       tags:
-        - authorization
+        - Authorization
       summary: Get Authorization
       description: Get authorization by the authorization identifier
       parameters:
@@ -86,10 +86,11 @@ paths:
           $ref: '#/components/responses/406NotAcceptable'
         '500':
           $ref: '#/components/responses/500InternalServerError'
-  '/authorization/{authorizationId}':
+      operationId: '2'
+  '/authorization/{AuthorizationIdentifier}':
     patch:
       tags:
-        - authorization
+        - Authorization
       summary: Update Authorization
       description: Update existing authorization
       parameters:
@@ -120,6 +121,7 @@ paths:
           $ref: '#/components/responses/406NotAcceptable'
         '500':
           $ref: '#/components/responses/500InternalServerError'
+      operationId: '3'
 components:
   schemas:
     MetaData:
@@ -192,7 +194,7 @@ components:
             $ref: ./models/problemdetails.v1.yaml
   parameters:
     AuthorizationIdentifierRequired:
-      name: AuthorizationIdentifierRequired
+      name: AuthorizationIdentifier
       in: query
       required: true
       schema:
