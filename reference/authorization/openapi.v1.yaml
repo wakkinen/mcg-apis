@@ -2,7 +2,7 @@ openapi: 3.1.0
 x-stoplight:
   id: kukbsmgt6fsyh
 info:
-  title: Authentication
+  title: Authorization
   version: '1.0'
   summary: MCG Authorization API
   description: 'This API able to create, update & get an authorization in CWQI.'
