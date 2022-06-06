@@ -90,6 +90,7 @@ paths:
     patch:
       tags:
         - authorization
+      summary: Update Authorization
       description: Update existing authorization
       parameters:
         - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
