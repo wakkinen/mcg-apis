@@ -18,10 +18,10 @@ paths:
     post:
       tags:
         - authorization
-      summary: Create authorization
+      summary: Create Authorization
       description: Creates a prior authorization in MCG Cite payer system.
       requestBody:
-        description: Created authorization
+        description: Created Authorization
         content:
           application/json:
             schema:
@@ -63,6 +63,7 @@ paths:
     get:
       tags:
         - authorization
+      summary: Get Authorization
       description: Get authorization by the authorization identifier
       parameters:
         - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
