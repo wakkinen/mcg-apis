@@ -1,0 +1,23 @@
+title: DocumentingUser
+x-stoplight:
+  id: m057od2nvcnsg
+type: object
+properties:
+  loginName:
+    type: string
+    description: login name of the documenting user
+  firstName:
+    type: string
+    description: first name of the documenting user
+  lastName:
+    type: string
+    description: last name of the documenting user
+  email:
+    type: string
+    description: email of the documenting user
+  businessPhone:
+    type: string
+    description: business phone of the documenting user
+  faxNumber:
+    type: string
+    description: fax number of the documenting user

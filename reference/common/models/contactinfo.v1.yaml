@@ -1,0 +1,17 @@
+title: ContactInfo
+x-stoplight:
+  id: sdtv9xjvd0jm9
+type: object
+properties:
+  firstName:
+    type: string
+    description: first name for the contact
+  lastName:
+    type: string
+    description: last name for the contact
+  businessPhone:
+    type: string
+    description: business phone for the contact
+  faxNumber:
+    type: string
+    description: fax number for the contact

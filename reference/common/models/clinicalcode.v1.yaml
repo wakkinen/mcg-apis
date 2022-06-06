@@ -1,0 +1,20 @@
+title: ClinicalCode
+x-stoplight:
+  id: 1vu5intibecos
+type: object
+properties:
+  codeType:
+    type: string
+    description: 'code type can be CPT, ICD 10P , ICD 10D'
+  code:
+    type: string
+    description: CPT or ICD 10P code
+  codeDescription:
+    type: string
+    description: optional code description
+  presentOnAdmission:
+    type: boolean
+    description: True or false value
+  primary:
+    type: boolean
+    description: primary code or not

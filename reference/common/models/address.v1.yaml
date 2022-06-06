@@ -1,0 +1,23 @@
+title: Address
+x-stoplight:
+  id: ub4veq3sdn7xw
+type: object
+properties:
+  address1:
+    type: string
+    description: address 1 of the entity
+  address2:
+    type: string
+    description: address 2 of the entity
+  city:
+    type: string
+    description: city of the facility
+  state:
+    type: string
+    description: state of the entity
+  zipCode:
+    type: string
+    description: zip code of the entity
+  countryCode:
+    type: string
+    description: country code of the entity

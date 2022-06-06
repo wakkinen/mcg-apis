@@ -1,0 +1,7 @@
+title: Attachment
+x-stoplight:
+  id: ktmmbus7oy9l8
+type: object
+properties:
+  id:
+    type: string

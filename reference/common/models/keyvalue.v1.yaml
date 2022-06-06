@@ -1,0 +1,11 @@
+title: KeyValue
+x-stoplight:
+  id: kazgp8wn1z6yz
+type: object
+properties:
+  code:
+    type: string
+    description: code for the entity
+  name:
+    type: string
+    description: name of the entity

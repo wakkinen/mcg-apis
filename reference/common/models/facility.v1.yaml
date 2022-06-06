@@ -1,0 +1,29 @@
+title: Facility
+x-stoplight:
+  id: s5pib7jymuber
+type: object
+properties:
+  facilityName:
+    type: string
+    description: Name of the facility
+  ishospitalFacility:
+    type: boolean
+    description: set True if the facility is the hospital
+  isrecoveryFacility:
+    type: boolean
+    description: set True if the facility is the recovery facility
+  businessPhone:
+    type: string
+    description: business phone of the facility
+  faxNumber:
+    type: string
+    description: fax number of the facility
+  address:
+    type: string
+    description: address of the facility
+  tin:
+    type: string
+    description: Tin number of the facility
+  npi:
+    type: string
+    description: NPI of the facility

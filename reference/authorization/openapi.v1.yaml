@@ -1,0 +1,198 @@
+openapi: 3.1.0
+x-stoplight:
+  id: kukbsmgt6fsyh
+info:
+  title: Authentication
+  version: '1.0'
+  summary: MCG Authorization API
+  description: 'This API able to create, update & get an authorization in CWQI.'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    email: ccsdevelopmentteam@mcg.com
+servers:
+  - url: /v1/
+paths:
+  /authorization:
+    post:
+      tags:
+        - authorization
+      summary: Create authorization
+      description: Creates a prior authorization in MCG Cite payer system.
+      requestBody:
+        description: Created authorization
+        content:
+          application/json:
+            schema:
+              $ref: ./models/authorizationreview.v1.yaml
+        required: true
+      responses:
+        '201':
+          description: Authorization successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationId'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: ../../common/models/problemdetails.v1.yaml
+        '401':
+          $ref: '#/components/responses/401UnAuthorized'
+        '403':
+          description: Forbidden - current user was able to be authenticated but does not have permission to perform this action
+          content:
+            application/json:
+              schema:
+                $ref: ../../common/models/problemdetails.v1.yaml
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      x-codegen-request-body-name: body
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: AuthorizationIdentifier
+          required: true
+          description: The authorization id
+    get:
+      tags:
+        - authorization
+      description: Get authorization by the authorization identifier
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: ./models/authorizationreview.v1.yaml
+        '401':
+          $ref: '#/components/responses/401UnAuthorized'
+        '404':
+          description: Authorization not found
+          content:
+            application/json:
+              schema:
+                $ref: ./models/problemdetails.v1.yaml
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+  '/authorization/{authorizationId}':
+    patch:
+      tags:
+        - authorization
+      description: Update existing authorization
+      parameters:
+        - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
+      requestBody:
+        description: Updated authorization
+        content:
+          application/json:
+            schema:
+              $ref: ./models/authorizationreview.v1.yaml
+        required: true
+      responses:
+        '204':
+          description: Authorization successfully updated
+        '400':
+          $ref: '#/components/responses/400BadRequest'
+        '401':
+          $ref: '#/components/responses/401UnAuthorized'
+        '403':
+          $ref: '#/components/responses/403Forbidden'
+        '404':
+          description: Authorization not found
+          content:
+            application/json:
+              schema:
+                $ref: ../../common/models/problemdetails.v1.yaml
+        '406':
+          $ref: '#/components/responses/406NotAcceptable'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+components:
+  schemas:
+    MetaData:
+      $ref: ./models/metadata.v1.yaml
+    AuthorizationReview:
+      $ref: ./models/authorizationreview.v1.yaml
+    ContactInfo:
+      $ref: ../common/models/contactinfo.v1.yaml
+    documentingUser:
+      $ref: ../common/models/documentinguser.v1.yaml
+    guidelines:
+      $ref: ../common/models/guideline.v1.yaml
+    clinicalCode:
+      $ref: ../common/models/clinicalcode.v1.yaml
+    facility:
+      $ref: ../common/models/facility.v1.yaml
+    address:
+      $ref: ../common/models/address.v1.yaml
+    provider:
+      $ref: ../common/models/provider.v1.yaml
+    patient:
+      $ref: ../common/models/patient.v1.yaml
+    encounter:
+      $ref: ../common/models/encounter.v1.yaml
+    keyValue:
+      $ref: ../common/models/keyvalue.v1.yaml
+    ProblemDetails:
+      $ref: ./models/problemdetails.v1.yaml
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
+  responses:
+    400BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+    403Forbidden:
+      description: Forbidden - current user was able to be authenticated but does not have permission to perform this action
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+    404UserNotFound:
+      description: User not found
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+    406NotAcceptable:
+      description: Content type not supported
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+    500InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+    401UnAuthorized:
+      description: Client could not be authorized
+      content:
+        application/json:
+          schema:
+            $ref: ./models/problemdetails.v1.yaml
+  parameters:
+    AuthorizationIdentifierRequired:
+      name: AuthorizationIdentifierRequired
+      in: query
+      required: true
+      schema:
+        type: string
+      description: Identifier for the Authorization

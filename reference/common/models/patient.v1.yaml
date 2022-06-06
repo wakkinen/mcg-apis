@@ -1,0 +1,20 @@
+title: Patient
+x-stoplight:
+  id: mvcbicg1c4t9p
+type: object
+properties:
+  mrn:
+    type: string
+    description: medical record number of the patient
+  memberId:
+    type: string
+    description: unique id of the patient
+  firstName:
+    type: string
+    description: first name of the patient
+  lastName:
+    type: string
+    description: last name of the patient
+  dateOfBirth:
+    type: string
+    description: business phone of the facility

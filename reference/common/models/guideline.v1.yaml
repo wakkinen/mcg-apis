@@ -1,0 +1,17 @@
+title: Guideline
+x-stoplight:
+  id: 8dyxj35vrpzis
+type: object
+properties:
+  hsim:
+    type: string
+    description: unique identifier for the documented guideline
+  code:
+    type: string
+    description: the diagnosis or the procedure code the guideline is documented against
+  codeType:
+    type: string
+    description: 'the type of the code CPT, ICD 10 etc'
+  sectionPaths:
+    type: string
+    description: the documented section paths to share with the payer

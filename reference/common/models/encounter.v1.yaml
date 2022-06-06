@@ -1,0 +1,17 @@
+title: Encounter
+x-stoplight:
+  id: zlffq3t6ildvu
+type: object
+properties:
+  encounterId:
+    type: string
+    description: unique id of the encounter from the proivder system
+  admitDate:
+    type: date
+    description: admit date for the encounter
+  dischargeDate:
+    type: date
+    description: discharge date for the encounter
+  dischargeDisposition:
+    type: keyValue object
+    description: discharge disposition

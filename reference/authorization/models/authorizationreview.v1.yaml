@@ -1,0 +1,61 @@
+title: Authorization Review
+x-stoplight:
+  id: cjs9es7g1tnep
+type: object
+description: ''
+properties:
+  serviceType:
+    $ref: ../../common/models/keyvalue.v1.yaml
+  admissionType:
+    $ref: ../../common/models/keyvalue.v1.yaml
+  placeOfService:
+    $ref: ../../common/models/keyvalue.v1.yaml
+  priority:
+    $ref: ../../common/models/keyvalue.v1.yaml
+  levelOfCare:
+    type: object
+    description: levelOfCare of the authorization
+  reviewId:
+    type: string
+    description: unique id for the review
+  requestorType:
+    type: string
+    description: requestor type can be provider or facility
+  serviceStartDate:
+    type: date
+    description: start date of the service
+  serviceEndDate:
+    type: date
+    description: end date of the service
+  requestedUnits:
+    type: string
+    description: The number of days requested for the inpatient stay
+  encounter:
+    type: encounter object
+    description: The encounter details from the provider system
+  patient:
+    type: patient object
+    description: The member details for whom the authorization is created
+  providerRequesting:
+    $ref: ../../common/models/provider.v1.yaml
+  providerAdmitting:
+    $ref: ../../common/models/provider.v1.yaml
+  providerAttending:
+    $ref: ../../common/models/provider.v1.yaml
+  facility:
+    $ref: ../../common/models/facility.v1.yaml
+  diagnoses:
+    $ref: ../../common/models/clinicalcode.v1.yaml
+  procedures:
+    $ref: ../../common/models/clinicalcode.v1.yaml
+  guidelines:
+    $ref: ../../common/models/guideline.v1.yaml
+  documentingUser:
+    $ref: ../../common/models/documentinguser.v1.yaml
+  contactInfo:
+    $ref: ../../common/models/contactinfo.v1.yaml
+  attachments:
+    description: additional documentation for the review
+    type: array
+    items:
+      $ref: ../../common/models/attachment.v1.yaml

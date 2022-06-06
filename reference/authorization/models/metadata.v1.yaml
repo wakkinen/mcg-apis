@@ -1,0 +1,14 @@
+title: Metadata
+x-stoplight:
+  id: oqpbti4xe72ck
+type: object
+properties:
+  requestSubmitDateTime:
+    type: datetime
+    description: The datetime stamp authorization is submitted
+  recipientName:
+    type: string
+    description: The globally unique identifier of the receipient (already configured in CC)
+  reviewType:
+    description: 'review type has code, name attributes. Review type can be Initial, Revision, Extension'
+    $ref: ../../common/models/keyvalue.v1.yaml

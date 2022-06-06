@@ -1,0 +1,38 @@
+title: Provider
+x-stoplight:
+  id: lxr9evvaf3meh
+type: object
+properties:
+  firstName:
+    type: string
+    description: first name of the provider
+  lastName:
+    type: string
+    description: last name of the provider
+  isPcp:
+    type: boolean
+    description: is the provider primary care physician
+  isAttending:
+    type: boolean
+    description: is the provider attending the service
+  isAdmitting:
+    type: boolean
+    description: is the provider admitting
+  businessPhone:
+    type: string
+    description: business phone of the provider
+  faxNumber:
+    type: string
+    description: fax number  of the provider
+  email:
+    type: string
+    description: email of the provider
+  address:
+    type: address object
+    description: address of the provider
+  taxId:
+    type: string
+    description: tax id of the provider
+  npi:
+    type: string
+    description: NPI of the provider
