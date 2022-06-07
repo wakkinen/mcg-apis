@@ -86,7 +86,7 @@ paths:
           $ref: '#/components/responses/406NotAcceptable'
         '500':
           $ref: '#/components/responses/500InternalServerError'
-      operationId: '2'
+      operationId: get-authorization
   '/authorization/{AuthorizationIdentifier}':
     patch:
       tags:
@@ -121,7 +121,7 @@ paths:
           $ref: '#/components/responses/406NotAcceptable'
         '500':
           $ref: '#/components/responses/500InternalServerError'
-      operationId: '3'
+      operationId: update-authorization
 components:
   schemas:
     MetaData:

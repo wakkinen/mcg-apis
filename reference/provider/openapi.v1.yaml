@@ -1,0 +1,183 @@
+openapi: 3.1.0
+x-stoplight:
+  id: u4ck2av92jxhv
+info:
+  title: Provider
+  version: '1.0'
+  summary: Provider
+  description: CRUD on Providers
+  contact:
+    email: somegroup@mcg.com
+servers:
+  - url: /v1
+paths:
+  '/Providers/{ProviderId}':
+    parameters:
+      - schema:
+          type: integer
+        name: ProviderId
+        in: path
+        required: true
+        description: Id of an existing Provider.
+    get:
+      summary: Get Provider Info by Provider ID
+      tags: ['Provider']
+      responses:
+        '200':
+          description: Provider Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+              examples:
+                Get Provider Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+        '404':
+          description: Provider Not Found
+      operationId: get-Providers-ProviderId
+      description: Retrieve the information of the Provider with the matching Provider ID.
+    patch:
+      summary: Update Provider Information
+      operationId: patch-Providers-ProviderId
+      responses:
+        '200':
+          description: Provider Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+              examples:
+                Updated Provider Rebecca Baker:
+                  value:
+                    id: 13
+                    firstName: Rebecca
+                    lastName: Baker
+                    email: rebecca@gmail.com
+                    emailVerified: false
+                    createDate: '2019-08-24'
+        '404':
+          description: Provider Not Found
+        '409':
+          description: Email Already Taken
+      description: Update the information of an existing Provider.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                  description: 'If a new email is given, the Provider''s email verified property will be set to false.'
+            examples:
+              Update First Name:
+                value:
+                  firstName: Rebecca
+              Update Email:
+                value:
+                  email: rebecca@gmail.com
+              Update Last Name & Date of Birth:
+                value:
+                  lastName: Baker
+        description: Patch Provider properties to update.
+  /Provider:
+    post:
+      summary: Create New Provider
+      operationId: post-Provider
+      responses:
+        '200':
+          description: Provider Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+              examples:
+                New Provider Bob Fellow:
+                  value:
+                    id: 12
+                    firstName: Bob
+                    lastName: Fellow
+                    email: bob.fellow@gmail.com
+                    emailVerified: false
+                    createDate: '2020-11-18'
+        '400':
+          description: Missing Required Information
+        '409':
+          description: Email Already Taken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+              required:
+                - firstName
+                - lastName
+                - email
+            examples:
+              Create Provider Bob Fellow:
+                value:
+                  firstName: Bob
+                  lastName: Fellow
+                  email: bob.fellow@gmail.com
+        description: Post the necessary fields for the API to create a new Provider.
+      description: Create a new Provider.
+    parameters: []
+components:
+  schemas:
+    Provider:
+      title: Provider
+      type: object
+      description: ''
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given Provider.
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        emailVerified:
+          type: boolean
+          description: Set to true if the Provider's email has been verified.
+        createDate:
+          type: string
+          format: date
+          description: The date that the Provider was created.
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified
+  securitySchemes:
+    api_key:
+      name: API Key
+      type: apiKey
+      in: header
