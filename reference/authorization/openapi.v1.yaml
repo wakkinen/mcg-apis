@@ -73,7 +73,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/authorizationreview.v1.yaml
+                $ref: ./models/authorization.v1.yaml
         '401':
           $ref: '#/components/responses/401UnAuthorized'
         '404':

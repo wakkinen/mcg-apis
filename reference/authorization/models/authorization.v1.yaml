@@ -1,0 +1,62 @@
+title: Authorization
+x-stoplight:
+  id: u615wd6dnx9oy
+type: object
+properties:
+  authorizationId:
+    type: string
+    description: Identifier of the authorization in payer system
+  originator:
+    type: string
+    description: originator of the authorization
+  acknowledgement":
+    type: string
+    description: acknowledgement from the payer
+  recipient:
+    type: string
+    description: recipient of the authorization
+  encounterId:
+    type: string
+    description: corresponding provider system encounter id
+  serviceStartDate:
+    type: string
+    description: startdate of the service
+  serviceEndDate":
+    type: string
+    description: end date of the service
+  payerNextReviewDate:
+    type: string
+    description: next review date for the service
+  approvedLevelOfCare:
+    type: string
+    description: approved level of care
+  approvedUnitOfMeasure:
+    type: string
+    description: approved unit of measure (days/units/visits)
+  approvedUnits:
+    type: string
+    description: number of days/units/visits approved
+  authorizationStatus":
+    type: string
+    description: first name for the contact
+  submitStatus:
+    type: string
+    description: submission status of the Auth (Draft/submitted)
+  completeDate:
+    type: string
+    description: 'if the auth is completed, the completed date'
+  submitDate:
+    type: string
+    description: auth submitted date
+  authRequestDisclaimers:
+    type: object
+    description: list of disclaimers from payer
+  authRequestNotes:
+    type: object
+    description: list of notes from payer
+  statusReason:
+    type: object
+    description: 'status id, text and the reason for the derived status'
+  patient:
+    type: object
+    description: 'patient object with the first name, last name, date of birth and MRN'
