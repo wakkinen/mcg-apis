@@ -15,20 +15,8 @@ info:
 servers:
   - url: 'https://api.mcg.com/v1/fhir'
 paths:
-  '/Questionnaire?url={url}&version={version}':
-    parameters:
-      - schema:
-          type: string
-        name: url
-        in: path
-        required: true
-        description: <canonical base>/Questionnaire/<hsim>
-      - schema:
-          type: string
-        name: version
-        in: path
-        description: <version> will be the “edition” from the DTR app context
-        required: true
+  /Questionnaire:
+    parameters: []
     get:
       summary: GET Questionnaire
       tags: []
@@ -153,22 +141,21 @@ paths:
                             text: 'Failure of previous proximal tibial or distal femoral osteotomy[[Cit:152709]]'
                             type: boolean
                             required: false
-      operationId: get-Questionnaire?url=-url-&version=-version
+      operationId: get-Questionnaire
       description: Retrieve the Questionnaire via a search by url and version - e.g. GET Questionnaire?url=<url>&version=<version>
-  '/Library?url={url}&version={version}':
-    parameters:
-      - schema:
-          type: string
-        name: url
-        in: path
-        required: true
-        description: <url> is the Library Id retrieved from the questionnaire
-      - schema:
-          type: string
-        name: version
-        in: path
-        required: true
-        description: <version> should be retrieved from the questionnaire
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: url
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: version
+          required: true
+  /Library:
+    parameters: []
     get:
       summary: GET Library
       tags: []
@@ -231,7 +218,18 @@ paths:
                         data: ewogICAibGlicmFyeSIgOiB7C...
       operationId: get-Library?url=-url-&version=-version
       description: Retrieves the Library by the Library reference url and version from the questionnaire
-  '/Library/{id}/$data-requirements':
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: url
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: version
+          required: true
+  '/Library/{id}':
     parameters:
       - schema:
           type: string
@@ -330,6 +328,12 @@ paths:
                           - performed
       operationId: get-Library-id-$data-requirements
       description: Gets the $data_requirements response for a given libray/questionnaire. The response includes an array of FHIR queries found in the `dataRequirement` array
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: $data-requirements
+          required: true
 components:
   schemas:
     Questionnaire:
