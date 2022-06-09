@@ -13,7 +13,7 @@ info:
   summary: MCG CQL API
   description: This API able to get MCG questionnaire elements for use with CQL.
 servers:
-  - url: /v1/fhir
+  - url: 'https://api.mcg.com/v1/fhir'
 paths:
   '/Questionnaire?url={url}&version={version}':
     parameters:
@@ -331,5 +331,363 @@ paths:
       operationId: get-Library-id-$data-requirements
       description: Gets the $data_requirements response for a given libray/questionnaire. The response includes an array of FHIR queries found in the `dataRequirement` array
 components:
-  schemas: {}
-  examples: {}
+  schemas:
+    Questionnaire:
+      $ref: ./models/questionnaire.v1.yaml
+      examples:
+        - resourceType: Questionnaire
+          id: 0010111250a
+          meta:
+            versionId: '1'
+            lastUpdated: '2022-05-02T16:14:24.702+00:00'
+            source: '#SKDqM5fZB66d7xM9'
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/cqf-questionnaire'
+          extension:
+            - url: 'http://hl7.org/fhir/StructureDefinition/cqf-library'
+              valueCanonical: 'http://mcg.com/fhir/Library/TotalKneeArthroplastyElements'
+          url: 'http://mcg.com/fhir/Questionnaire/total-knee-arthroplasty'
+          identifier:
+            - use: official
+              value: 7AEB32D7BD8E52C7
+          version: 1.0.0
+          name: TotalKneeArthroplastyQuestionnaire
+          title: Total Knee Arthroplasty Procedure Questionnaire
+          status: active
+          experimental: false
+          subjectType:
+            - Patient
+          description: A questionnaire for indication of Total Knee Arthroplasty Procedure.
+          item:
+            - extension:
+                - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                  valueCode: one-or-more
+              linkId: 7AEB32D7BD8E52C7
+              prefix: '1'
+              text: 'Procedure is indicated for 1 or more of the following[[Cit:191961]][[Cit:175107]][[Cit:235790]]:'
+              type: question
+              required: false
+              item:
+                - extension:
+                    - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                      valueCode: all
+                  linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3
+                  prefix: '1.1'
+                  text: 'Degenerative joint disease, as indicated by ALL of the following[[Cit:226421]][[Cit:255953]]:'
+                  type: question
+                  required: false
+                  item:
+                    - extension:
+                        - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                          valueExpression:
+                            language: text/cql
+                            expression: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+                      linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-5DB0D0DA537908E5
+                      prefix: 1.1.1
+                      text: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing.'
+                      type: boolean
+                      required: false
+                    - extension:
+                        - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                          valueExpression:
+                            language: text/cql
+                            expression: 'Has Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification)'
+                      linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-DE330A145C60953E
+                      prefix: 1.1.2
+                      text: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).[[Cit:250468]]'
+                      type: boolean
+                      required: false
+                    - extension:
+                        - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                          valueExpression:
+                            language: text/cql
+                            expression: 'Has Patient has failed or is not candidate for more conservative measures (eg, osteotomy)'
+                      linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-122E41C63B98DF21
+                      prefix: 1.1.3
+                      text: 'Patient has failed or is not candidate for more conservative measures (eg, osteotomy).'
+                      type: boolean
+                      required: false
+                    - extension:
+                        - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                          valueCode: one-or-more
+                      linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C
+                      prefix: 1.1.4
+                      text: 'Treatment indicated due to 1 or more of the following:'
+                      type: question
+                      required: false
+                      item:
+                        - extension:
+                            - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                              valueExpression:
+                                language: text/cql
+                                expression: Has Disabling Pain Conditions
+                          linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-85E212BC49A78F11
+                          prefix: 1.1.4.1
+                          text: Disabling pain
+                          type: boolean
+                          required: false
+                        - extension:
+                            - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                              valueExpression:
+                                language: text/cql
+                                expression: Has Functional Disability Conditions
+                          linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-CBCEFE8095B0DAB9
+                          prefix: 1.1.4.2
+                          text: Functional disability
+                          type: boolean
+                          required: false
+                - extension:
+                    - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                      valueExpression:
+                        language: text/cql
+                        expression: Has Failure of Previous Proximal Tibial or Distal Femoral Osteotomy
+                  linkId: 7AEB32D7BD8E52C7-D9E9104ABD48B3ED
+                  prefix: '1.2'
+                  text: 'Failure of previous proximal tibial or distal femoral osteotomy[[Cit:152709]]'
+                  type: boolean
+                  required: false
+    Library:
+      $ref: ./models/library.v1.yaml
+    DataRequirement:
+      $ref: ./models/datarequirement.v1.yaml
+  examples:
+    Questionnaire:
+      value:
+        resourceType: Questionnaire
+        id: 0010111250a
+        meta:
+          versionId: '1'
+          lastUpdated: '2022-05-02T16:14:24.702+00:00'
+          source: '#SKDqM5fZB66d7xM9'
+          profile:
+            - 'http://hl7.org/fhir/StructureDefinition/cqf-questionnaire'
+        extension:
+          - url: 'http://hl7.org/fhir/StructureDefinition/cqf-library'
+            valueCanonical: 'http://mcg.com/fhir/Library/TotalKneeArthroplastyElements'
+        url: 'http://mcg.com/fhir/Questionnaire/total-knee-arthroplasty'
+        identifier:
+          - use: official
+            value: 7AEB32D7BD8E52C7
+        version: 1.0.0
+        name: TotalKneeArthroplastyQuestionnaire
+        title: Total Knee Arthroplasty Procedure Questionnaire
+        status: active
+        experimental: false
+        subjectType:
+          - Patient
+        description: A questionnaire for indication of Total Knee Arthroplasty Procedure.
+        item:
+          - extension:
+              - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                valueCode: one-or-more
+            linkId: 7AEB32D7BD8E52C7
+            prefix: '1'
+            text: 'Procedure is indicated for 1 or more of the following[[Cit:191961]][[Cit:175107]][[Cit:235790]]:'
+            type: question
+            required: false
+            item:
+              - extension:
+                  - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                    valueCode: all
+                linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3
+                prefix: '1.1'
+                text: 'Degenerative joint disease, as indicated by ALL of the following[[Cit:226421]][[Cit:255953]]:'
+                type: question
+                required: false
+                item:
+                  - extension:
+                      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                        valueExpression:
+                          language: text/cql
+                          expression: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-5DB0D0DA537908E5
+                    prefix: 1.1.1
+                    text: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing.'
+                    type: boolean
+                    required: false
+                  - extension:
+                      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                        valueExpression:
+                          language: text/cql
+                          expression: 'Has Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification)'
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-DE330A145C60953E
+                    prefix: 1.1.2
+                    text: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).[[Cit:250468]]'
+                    type: boolean
+                    required: false
+                  - extension:
+                      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                        valueExpression:
+                          language: text/cql
+                          expression: 'Has Patient has failed or is not candidate for more conservative measures (eg, osteotomy)'
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-122E41C63B98DF21
+                    prefix: 1.1.3
+                    text: 'Patient has failed or is not candidate for more conservative measures (eg, osteotomy).'
+                    type: boolean
+                    required: false
+                  - extension:
+                      - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                        valueCode: one-or-more
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C
+                    prefix: 1.1.4
+                    text: 'Treatment indicated due to 1 or more of the following:'
+                    type: question
+                    required: false
+                    item:
+                      - extension:
+                          - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                            valueExpression:
+                              language: text/cql
+                              expression: Has Disabling Pain Conditions
+                        linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-85E212BC49A78F11
+                        prefix: 1.1.4.1
+                        text: Disabling pain
+                        type: boolean
+                        required: false
+                      - extension:
+                          - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                            valueExpression:
+                              language: text/cql
+                              expression: Has Functional Disability Conditions
+                        linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-CBCEFE8095B0DAB9
+                        prefix: 1.1.4.2
+                        text: Functional disability
+                        type: boolean
+                        required: false
+              - extension:
+                  - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                    valueExpression:
+                      language: text/cql
+                      expression: Has Failure of Previous Proximal Tibial or Distal Femoral Osteotomy
+                linkId: 7AEB32D7BD8E52C7-D9E9104ABD48B3ED
+                prefix: '1.2'
+                text: 'Failure of previous proximal tibial or distal femoral osteotomy[[Cit:152709]]'
+                type: boolean
+                required: false
+    Library:
+      value:
+        resourceType: Library
+        id: TotalKneeArthroplastyElements
+        meta:
+          versionId: '1'
+          lastUpdated: '2022-05-02T16:14:24.702+00:00'
+          source: '#SKDqM5fZB66d7xM9'
+        url: 'http://mcg.com/fhir/Library/TotalKneeArthroplastyElements'
+        version: 1.0.000
+        name: TotalKneeArthroplastyElements
+        relatedArtifact:
+          - type: depends-on
+            display: FHIR model information
+            resource: 'http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1'
+          - type: depends-on
+            display: Library FHIRCommon
+            resource: 'http://mcg.com/fhir/Library/FHIRCommon|4.0.1'
+        parameter:
+          - name: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+            use: out
+            min: 0
+            max: '1'
+            type: boolean
+          - name: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).[[Cit:250468]]'
+            use: out
+            min: 0
+            max: '1'
+            type: boolean
+        dataRequirement:
+          - type: Patient
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Patient'
+          - type: Condition
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Condition'
+          - type: Condition
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Condition'
+            mustSupport:
+              - code
+              - onset
+        content:
+          - contentType: text/cql
+            data: LyogQ29udGV4dC1...
+          - contentType: application/elm+xml
+            data: PD94bWwgdmVyc2lv...
+          - contentType: application/elm+json
+            data: ewogICAibGlicmFyeSIgOiB7C...
+    DataRequirement:
+      value:
+        resourceType: Library
+        extension:
+          - url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode'
+            valueCoding:
+              system: 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
+              code: confirmed
+              display: confirmed
+          - url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition'
+            extension:
+              - url: libraryName
+                valueString: TotalKneeArthroplastyElements
+              - url: name
+                valueString: 90 Day Lookback Period
+              - url: statement
+                valueString: |-
+                  define "90 Day Lookback Period":
+                    Interval[Today() - 90 days, Today()]
+              - url: displaySequence
+                valueInteger: 0
+        status: active
+        type:
+          coding:
+            - system: 'http://terminology.hl7.org/CodeSystem/library-type'
+              code: module-definition
+        relatedArtifact:
+          - type: depends-on
+            display: FHIR model information
+            resource: 'http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1'
+          - type: depends-on
+            display: Library FHIRCommon
+            resource: Library/FHIRCommon|4.0.1
+          - type: depends-on
+            display: Code system ConditionVerificationStatusCodes
+            resource: 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
+          - type: depends-on
+            display: Value set Active Condition
+            resource: 'http://fhir.org/guides/cqf/common/ValueSet/active-condition'
+          - type: depends-on
+            display: Value set rc_boneNarrowing
+            resource: 'http://mcg.com/fhir/ValueSet/rc_boneNarrowing'
+        parameter:
+          - name: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+            use: out
+            min: 0
+            max: '1'
+            type: boolean
+          - name: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).[[Cit:250468]]'
+            use: out
+            min: 0
+            max: '1'
+            type: boolean
+        dataRequirement:
+          - extension:
+              - url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-fhirQueryPattern'
+                valueString: 'Patient?_id={{context.patientId}}'
+            type: Patient
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Patient'
+          - extension:
+              - url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-fhirQueryPattern'
+                valueString: 'Condition?subject=Patient/{{context.patientId}}'
+            type: Condition
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Condition'
+            mustSupport:
+              - code
+              - onset
+          - extension:
+              - url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-fhirQueryPattern'
+                valueString: 'Procedure?subject=Patient/{{context.patientId}}'
+            type: Procedure
+            profile:
+              - 'http://hl7.org/fhir/StructureDefinition/Procedure'
+            mustSupport:
+              - code
+              - performed

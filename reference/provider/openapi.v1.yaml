@@ -9,7 +9,7 @@ info:
   contact:
     email: somegroup@mcg.com
 servers:
-  - url: /v1
+  - url: 'https://api.mcg.com/v1'
 paths:
   '/Providers/{ProviderId}':
     parameters:
@@ -20,8 +20,9 @@ paths:
         required: true
         description: Id of an existing Provider.
     get:
-      summary: Get Provider Info by Provider ID
-      tags: ['Provider']
+      summary: GET Provider
+      tags:
+        - Provider
       responses:
         '200':
           description: Provider Found
@@ -43,7 +44,7 @@ paths:
       operationId: get-Providers-ProviderId
       description: Retrieve the information of the Provider with the matching Provider ID.
     patch:
-      summary: Update Provider Information
+      summary: PATCH Provider
       operationId: patch-Providers-ProviderId
       responses:
         '200':
@@ -92,7 +93,7 @@ paths:
         description: Patch Provider properties to update.
   /Provider:
     post:
-      summary: Create New Provider
+      summary: POST Provider
       operationId: post-Provider
       responses:
         '200':

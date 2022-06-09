@@ -12,13 +12,13 @@ info:
   contact:
     email: ccsdevelopmentteam@mcg.com
 servers:
-  - url: /v1
+  - url: 'https://api.mcg.com/v1'
 paths:
   /authorization:
     post:
       tags:
         - Authorization
-      summary: Create Authorization
+      summary: POST Authorization
       description: Creates a prior authorization in MCG Cite payer system.
       requestBody:
         description: Created Authorization
@@ -62,7 +62,7 @@ paths:
     get:
       tags:
         - Authorization
-      summary: Get Authorization
+      summary: GET Authorization
       description: Get authorization by the authorization identifier
       parameters:
         - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
@@ -90,7 +90,7 @@ paths:
     patch:
       tags:
         - Authorization
-      summary: Update Authorization
+      summary: PATCH Authorization
       description: Update existing authorization
       parameters:
         - $ref: '#/components/parameters/AuthorizationIdentifierRequired'
