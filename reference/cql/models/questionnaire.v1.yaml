@@ -1,0 +1,286 @@
+title: Questionnaire
+x-stoplight:
+  id: qyjt4ii8yufm7
+type: object
+properties:
+  resourceType:
+    type: string
+  id:
+    type: string
+  meta:
+    type: object
+    properties:
+      versionId:
+        type: string
+      lastUpdated:
+        type: string
+      source:
+        type: string
+      profile:
+        type: array
+        items:
+          type: string
+  extension:
+    type: array
+    items:
+      type: object
+      properties:
+        url:
+          type: string
+        valueCanonical:
+          type: string
+  url:
+    type: string
+  identifier:
+    type: array
+    items:
+      type: object
+      properties:
+        use:
+          type: string
+        value:
+          type: string
+  version:
+    type: string
+  name:
+    type: string
+  title:
+    type: string
+  status:
+    type: string
+  experimental:
+    type: boolean
+  subjectType:
+    type: array
+    items:
+      type: string
+  description:
+    type: string
+  item:
+    type: array
+    items:
+      type: object
+      properties:
+        extension:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+              valueCode:
+                type: string
+        linkId:
+          type: string
+        prefix:
+          type: string
+        text:
+          type: string
+        type:
+          type: string
+        required:
+          type: boolean
+        item:
+          type: array
+          items:
+            type: object
+            properties:
+              extension:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                    valueCode:
+                      type: string
+                    valueExpression:
+                      type: object
+                      properties:
+                        language:
+                          type: string
+                        expression:
+                          type: string
+              linkId:
+                type: string
+              prefix:
+                type: string
+              text:
+                type: string
+              type:
+                type: string
+              required:
+                type: boolean
+              item:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    extension:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          url:
+                            type: string
+                          valueExpression:
+                            type: object
+                            properties:
+                              language:
+                                type: string
+                              expression:
+                                type: string
+                          valueCode:
+                            type: string
+                    linkId:
+                      type: string
+                    prefix:
+                      type: string
+                    text:
+                      type: string
+                    type:
+                      type: string
+                    required:
+                      type: boolean
+                    item:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          extension:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                url:
+                                  type: string
+                                valueExpression:
+                                  type: object
+                                  properties:
+                                    language:
+                                      type: string
+                                    expression:
+                                      type: string
+                          linkId:
+                            type: string
+                          prefix:
+                            type: string
+                          text:
+                            type: string
+                          type:
+                            type: string
+                          required:
+                            type: boolean
+x-examples:
+  example-1:
+    resourceType: Questionnaire
+    id: 0010111250a
+    meta:
+      versionId: '1'
+      lastUpdated: '2022-05-02T16:14:24.702+00:00'
+      source: '#SKDqM5fZB66d7xM9'
+      profile:
+        - 'http://hl7.org/fhir/StructureDefinition/cqf-questionnaire'
+    extension:
+      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-library'
+        valueCanonical: 'http://mcg.com/fhir/Library/TotalKneeArthroplastyElements'
+    url: 'http://mcg.com/fhir/Questionnaire/total-knee-arthroplasty'
+    identifier:
+      - use: official
+        value: 7AEB32D7BD8E52C7
+    version: 1.0.0
+    name: TotalKneeArthroplastyQuestionnaire
+    title: Total Knee Arthroplasty Procedure Questionnaire
+    status: active
+    experimental: false
+    subjectType:
+      - Patient
+    description: A questionnaire for indication of Total Knee Arthroplasty Procedure.
+    item:
+      - extension:
+          - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+            valueCode: one-or-more
+        linkId: 7AEB32D7BD8E52C7
+        prefix: '1'
+        text: 'Procedure is indicated for 1 or more of the following[[Cit:191961]][[Cit:175107]][[Cit:235790]]:'
+        type: question
+        required: false
+        item:
+          - extension:
+              - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                valueCode: all
+            linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3
+            prefix: '1.1'
+            text: 'Degenerative joint disease, as indicated by ALL of the following[[Cit:226421]][[Cit:255953]]:'
+            type: question
+            required: false
+            item:
+              - extension:
+                  - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                    valueExpression:
+                      language: text/cql
+                      expression: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+                linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-5DB0D0DA537908E5
+                prefix: 1.1.1
+                text: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing.'
+                type: boolean
+                required: false
+              - extension:
+                  - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                    valueExpression:
+                      language: text/cql
+                      expression: 'Has Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification)'
+                linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-DE330A145C60953E
+                prefix: 1.1.2
+                text: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).[[Cit:250468]]'
+                type: boolean
+                required: false
+              - extension:
+                  - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                    valueExpression:
+                      language: text/cql
+                      expression: 'Has Patient has failed or is not candidate for more conservative measures (eg, osteotomy)'
+                linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-122E41C63B98DF21
+                prefix: 1.1.3
+                text: 'Patient has failed or is not candidate for more conservative measures (eg, osteotomy).'
+                type: boolean
+                required: false
+              - extension:
+                  - url: 'http://mcg.com/fhir/ValueSet/boolean-calculation-method'
+                    valueCode: one-or-more
+                linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C
+                prefix: 1.1.4
+                text: 'Treatment indicated due to 1 or more of the following:'
+                type: question
+                required: false
+                item:
+                  - extension:
+                      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                        valueExpression:
+                          language: text/cql
+                          expression: Has Disabling Pain Conditions
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-85E212BC49A78F11
+                    prefix: 1.1.4.1
+                    text: Disabling pain
+                    type: boolean
+                    required: false
+                  - extension:
+                      - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                        valueExpression:
+                          language: text/cql
+                          expression: Has Functional Disability Conditions
+                    linkId: 7AEB32D7BD8E52C7-F1CFC1157962C1F3-76ED5EB736DAB43C-CBCEFE8095B0DAB9
+                    prefix: 1.1.4.2
+                    text: Functional disability
+                    type: boolean
+                    required: false
+          - extension:
+              - url: 'http://hl7.org/fhir/StructureDefinition/cqf-expression'
+                valueExpression:
+                  language: text/cql
+                  expression: Has Failure of Previous Proximal Tibial or Distal Femoral Osteotomy
+            linkId: 7AEB32D7BD8E52C7-D9E9104ABD48B3ED
+            prefix: '1.2'
+            text: 'Failure of previous proximal tibial or distal femoral osteotomy[[Cit:152709]]'
+            type: boolean
+            required: false
