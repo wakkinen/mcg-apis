@@ -141,7 +141,7 @@ paths:
                             text: 'Failure of previous proximal tibial or distal femoral osteotomy[[Cit:152709]]'
                             type: boolean
                             required: false
-      operationId: get-Questionnaire
+      operationId: get-questionnaire
       description: Retrieve the Questionnaire via a search by url and version - e.g. GET Questionnaire?url=<url>&version=<version>
       parameters:
         - schema:
@@ -216,7 +216,7 @@ paths:
                         data: PD94bWwgdmVyc2lv...
                       - contentType: application/elm+json
                         data: ewogICAibGlicmFyeSIgOiB7C...
-      operationId: get-Library?url=-url-&version=-version
+      operationId: get-library
       description: Retrieves the Library by the Library reference url and version from the questionnaire
       parameters:
         - schema:
@@ -326,7 +326,7 @@ paths:
                         mustSupport:
                           - code
                           - performed
-      operationId: get-Library-id-$data-requirements
+      operationId: get-library-id
       description: Gets the $data_requirements response for a given libray/questionnaire. The response includes an array of FHIR queries found in the `dataRequirement` array
       parameters:
         - schema:

@@ -11,14 +11,13 @@ info:
 servers:
   - url: 'https://api.mcg.com/v1'
 paths:
-  '/Providers/{ProviderId}':
+  '/Provider/{id}':
     parameters:
       - schema:
-          type: integer
-        name: ProviderId
+          type: string
+        name: id
         in: path
         required: true
-        description: Id of an existing Provider.
     get:
       summary: GET Provider
       tags:
@@ -45,7 +44,7 @@ paths:
       description: Retrieve the information of the Provider with the matching Provider ID.
     patch:
       summary: PATCH Provider
-      operationId: patch-Providers-ProviderId
+      operationId: patch-providers-id
       responses:
         '200':
           description: Provider Updated
@@ -94,7 +93,7 @@ paths:
   /Provider:
     post:
       summary: POST Provider
-      operationId: post-Provider
+      operationId: post-provider
       responses:
         '200':
           description: Provider Created

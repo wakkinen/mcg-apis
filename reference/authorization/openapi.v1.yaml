@@ -59,6 +59,7 @@ paths:
           in: query
           name: AuthorizationIdentifier
           description: The authorization id
+      operationId: post-authorization
     get:
       tags:
         - Authorization
@@ -120,7 +121,7 @@ paths:
           $ref: '#/components/responses/406NotAcceptable'
         '500':
           $ref: '#/components/responses/500InternalServerError'
-      operationId: update-authorization
+      operationId: patch-authorization
 components:
   schemas:
     MetaData:
