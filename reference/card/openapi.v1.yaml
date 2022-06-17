@@ -1,0 +1,544 @@
+openapi: 3.1.0
+x-stoplight:
+  id: 8ae43qrrdve4z
+info:
+  title: Card
+  version: '1.0'
+  description: MCG CARD Api for submitting authorization request
+  contact:
+    name: Kanakaiah Etipakam
+    email: kanakaiah.etipakam@mcg.com
+servers:
+  - url: 'https://api.mcg.com/v1/fhir'
+paths:
+  /AutoAuth/Api/PriorAuthorization:
+    post:
+      summary: ''
+      operationId: post-AutoAuth-Api-PriorAuthorization
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/response-body.v1.yaml
+              examples:
+                example-1:
+                  $ref: '#/components/examples/response-body.example.v1.json'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/request-body.v1.yaml
+            examples:
+              example-1:
+                $ref: '#/components/examples/request-body.example.v1.json'
+components:
+  schemas: {}
+  securitySchemes:
+    API Key - 1:
+      type: oauth2
+  examples:
+    request-body.example.v1.json:
+      value:
+        apiUser: 'Etipakam, Kanakaiah'
+        requestType: Procedure Pre-authorization
+        applicationSource: Collaborative Care
+        levelOfCare: Inpatient
+        dateOfService: '2021-08-02T07:15:00+00:00'
+        customEpisodeId: null
+        lineOfBusiness: null
+        patient:
+          mrn: null
+          firstName: Nancy
+          lastName: Nunise
+          dateOfBirth: '1943-01-01'
+          address:
+            address1: 33 East Ave
+            address2: null
+            city: Mounds
+            state: OK
+            zipCode: '74047'
+          gender: Female
+        requestingProvider:
+          id: null
+          firstName: Chelsey
+          lastName: Watts
+          address:
+            address1: 1249  Middleville Road
+            address2: null
+            city: MARTHAVILLE
+            state: Louisiana
+            zipCode: '71450'
+          npi: null
+        attendingProvider:
+          id: null
+          firstName: Arnold
+          lastName: Meza
+          address:
+            address1: 4435 Bird Spring Lane
+            address2: null
+            city: Houston
+            state: Texas
+            zipCode: '77077'
+          npi: null
+        facility:
+          id: null
+          facilityName: Waterbury Hospital
+          address:
+            address1: 773  Wiseman Street
+            address2: null
+            city: Knoxville
+            state: Tennessee
+            zipCode: '37909'
+          npi: null
+        diagnoses:
+          - hsim: 0010111250a
+            code: M97.11XA
+            codeType: ICD10-D
+            isPrimary: true
+        procedures:
+          - hsim: 0010111250a
+            code: '27447'
+            codeType: CPT
+            isPrimary: true
+        guidelines:
+          - contentOwner: GA
+            edition: '26.0'
+            guidelineTitle: null
+            product: ISC
+            hsim: 0010111250a
+            outline:
+              indications:
+                - id: 04A08944B99C076A
+                  selected: true
+                  notes: []
+                - id: 59F7A040E7CDBFD7
+                  selected: true
+                  notes: []
+                - id: 7AEB32D7BD8E52C7
+                  selected: true
+                  notes: []
+                - id: 60C12321081444AC
+                  selected: true
+                  notes: []
+              outlineNotes: null
+        attachments:
+          - ID: 20D767E5-4B90-4BD5-9ED0-2554CFB8ACED
+            FileName: 'MCG_Clinical_Summary_2022-06-16T17:54:49.852Z.pdf'
+        notes: null
+        authNotes: null
+    response-body.example.v1.json:
+      value:
+        Authorization:
+          RequestingProvider:
+            ProviderId: PRO-00000002
+            FirstName: Chelsey
+            LastName: Watts
+            IsPcp: 'true'
+            IsAttending: 'true'
+            IsAdmitting: 'true'
+            BusinessPhone: ''
+            FaxNumber: ''
+            Email: ''
+            Address: 1249  Middleville Road
+            City: MARTHAVILLE
+            State: Louisiana
+            PostalCode: '71450'
+            NPI: ''
+          Contact:
+            FirstName: ''
+            LastName: ''
+            FaxNumber: ''
+            PhoneNumber: ''
+          RequestStatus: Pended
+          RequestStatusCode: '04'
+          AuthRequestSubmitStatusText: Submitted
+          LengthOfStay: '0'
+          ApprovedLengthOfStay: '0'
+          Urgent: 'False'
+          AdmissionType: ''
+          SubmitDate: '2022-06-16T18:09:34.000'
+          SubmitDateStr: '6/16/2022 6:09 PM GMT'
+          UpdateDate: '2022-06-16T00:00:00.000'
+          UpdateDateStr: 6/16/2022
+          CompleteStatus: 'False'
+          CompleteDateStr: ''
+          ContactPhoneNumber: ''
+          SiteOfServiceCode: ''
+          SiteOfServiceName: ''
+          OONReason: ''
+          ServiceTypeCode: ''
+          ServiceTypeName: ''
+          LatestReviewID: ''
+          TransactionID: 42a2e6bb-78a2-4be7-9033-5f0791903066
+          RequestType: Procedure Pre-authorization
+          RequestedLevelOfCare: Inpatient
+          RequestedLevelOfCareCode: '1'
+          RequestedLevelOfCareUnit: Days
+          ApprovedLevelOfCare: ''
+          ApprovedLevelOfCareCode: ''
+          ApprovedLevelOfCareUnit: ''
+          AppealDateStr: ''
+          AppealDeterminationDateStr: ''
+          AuthorizationCode:
+            - Code: M97.11XA
+              CodeType: ICD-10 Diagnosis
+              EpisodeCodeIDSource: 1B60550E-8824-4636-A1E1-67737D8CE8BB
+              RequestedCodeUnits: '0'
+              ApprovedCodeUnits: '0'
+              HSIMCode: 0111250a
+              TreatmentType: ''
+              CodeModifier: ''
+              ServiceStartDateStr: ''
+              ServiceEndDateStr: ''
+              ApprovedServiceStartDateStr: ''
+              ApprovedServiceEndDateStr: ''
+              IsPrimary: 'true'
+              Status: NoDecisionYet
+            - Code: '27447'
+              CodeType: CPT/HCPCS
+              EpisodeCodeIDSource: 12CD388C-1200-4D81-9F98-00643CEC5551
+              RequestedCodeUnits: '0'
+              ApprovedCodeUnits: '0'
+              HSIMCode: 0111250a
+              TreatmentType: ''
+              CodeModifier: ''
+              ServiceStartDateStr: ''
+              ServiceEndDateStr: ''
+              ApprovedServiceStartDateStr: ''
+              ApprovedServiceEndDateStr: ''
+              IsPrimary: 'true'
+              Status: NoDecisionYet
+        Patient:
+          PatientId: PAT-00000002
+          FirstName: Nancy
+          LastName: Nunise
+          Gender: Female
+          DateOfBirth: '1943-01-01'
+          DateOfBirthStr: 1/1/1943
+          HomePhone: ''
+          BusinessPhone: ''
+          FaxNumber: ''
+          CellPhone: ''
+          Email: ''
+          Address: 33 East Ave
+          City: Mounds
+          State: Oklahoma
+          PostalCode: '74047'
+          CountryCode: ''
+          Characteristics: ''
+          NHSNo: ''
+          SSN: ''
+          BenefitPlanName: ''
+          BenefitProduct: ''
+          BenefitGroupID: ''
+          BenefitMemberID: ''
+          BenefitEligibilityDateStr: ''
+          BenefitDisenrollmentDateStr: ''
+          PatientGroupID: ''
+          PatientMemberID: ''
+          LineOfBusinessName: ''
+          MRN: ''
+        Facility:
+          FacilityId: FAC-00000002
+          Name: Waterbury Hospital
+          IshospitalFacility: 'true'
+          IsrecoveryFacility: 'true'
+          BusinessPhone: ''
+          FaxNumber: ''
+          Address: 773  Wiseman Street
+          City: Knoxville
+          State: Tennessee
+          PostalCode: '37909'
+          TaxID: ''
+          NPI: ''
+        AttendingProvider:
+          ProviderId: PRO-00000003
+          FirstName: Arnold
+          LastName: Meza
+          IsPcp: 'true'
+          IsAttending: 'true'
+          IsAdmitting: 'true'
+          BusinessPhone: ''
+          FaxNumber: ''
+          Email: ''
+          Address: 4435 Bird Spring Lane
+          City: Houston
+          State: Texas
+          PostalCode: '77077'
+          NPI: ''
+        EpisodeId: EPS-00000002
+        EncounterId: ''
+        Originator: ''
+        AdmitDateStr: ''
+        AdmitTimeStr: ''
+        RequestedAdmitDate: '2021-08-02'
+        RequestedAdmitDateStr: 8/2/2021
+        ReviewerName: 'Etipakam, Kanakaiah'
+        UpdateDate: '2022-06-16T18:09:32.000'
+        UpdateDateStr: '6/16/2022 6:09 PM GMT'
+        EpisodeState: In Primary Review
+        CreateUser: 'Etipakam, Kanakaiah'
+        CreateDate: '2022-06-16T18:09:13.000'
+        CreateDateStr: '6/16/2022 6:09 PM GMT'
+        DischargeDateStr: ''
+        NextReviewDateStr: ''
+        ExpectedDischargeDateStr: ''
+        AuthRequestStatus: Pended
+        PointOfCare: ''
+        Floor: ''
+        Building: ''
+        Room: ''
+        Bed: ''
+        RiskScore: ''
+        AdvisorReferralDisclaimer: ''
+        ArrivalDateStr: ''
+        ObservationDateStr: ''
+        Attachment:
+          - AttachmentId: E9ECB395-A1FD-448D-960B-BAC8B546F072
+            FileName: 'MCG_Clinical_Summary_2022-06-16T18:08:28.203Z.pdf'
+            FileDescription: ''
+            ReviewId: ''
+            ReviewTypeCode: ''
+            ReviewTypeName: ''
+            InsertDateLocal: '6/16/2022 6:09 PM GMT'
+            InsertDate: '2022-06-16T18:09:27.000'
+            InsertByName: 'Etipakam, Kanakaiah'
+        EpisodeCode:
+          - CodeCategory: Diagnosis
+            CodeType: ICD-10 Diagnosis
+            Code: M97.11XA
+            CodeDescription: ''
+            PresentOnAdmission: '0'
+            Primary: 'True'
+            EpisodeCodeIDSource: 1B60550E-8824-4636-A1E1-67737D8CE8BB
+          - CodeCategory: Procedure
+            CodeType: CPT/HCPCS
+            Code: '27447'
+            CodeDescription: ''
+            PresentOnAdmission: '0'
+            Primary: 'True'
+            EpisodeCodeIDSource: 12CD388C-1200-4D81-9F98-00643CEC5551
+        Guideline:
+          - HSIM: 0111250a
+            OrgOtg: S-700
+            Los: A-1 (PO)
+            GuidelineName: 'Knee Arthroplasty, Total'
+            Version: MCG 26th Edition
+            Publication: Inpatient and Surgical Care
+            PubCode: ISC
+            AddUser: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+            AddDate: '2022-06-16'
+            AddDateStr: 6/16/2022
+            InsertDate: '2022-06-16T18:09:29.000'
+            InsertDateStr: '6/16/2022 6:09 PM GMT'
+            NextReviewDateStr: ''
+            IsCustom: 'False'
+            CustomDisclaimer: ''
+            CustomDisclaimerNote: ''
+            IsMCR: 'False'
+            MCRDisclaimer: ''
+            Outline:
+              - SectionTitle: Clinical Indications for Procedure
+                Status: Documented
+                UpdateDate: '2022-06-16T18:09:32.000'
+                UpdateDateStr: '6/16/2022 6:09 PM GMT'
+                ReviewerName: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+                logic_type: '2'
+                admissionsupportdef_id: ''
+                HSIM: 0111250a
+                IsPrimary: 'False'
+                IndicationMetStr: Indications Met
+                Path: /Care_Planning_-_Inpatient_Admission_and_Alternatives/Clinical_Indications_for_Procedure
+                Indication:
+                  - Content: 'Procedure is indicated for ...  (1) (2) (3):'
+                    Indication:
+                      - Content: 'Degenerative joint disease, as indicated by ...  (4) (5) (6):'
+                        Indication:
+                          - Content: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+                            IndicationId: 5DB0D0DA537908E5
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).'
+                            IndicationId: DE330A145C60953E
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: 'Patient has failed or is not candidate for more conservative measures (eg, osteotomy).'
+                            IndicationId: 122E41C63B98DF21
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: 'Treatment indicated due to ... :'
+                            Indication:
+                              - Content: Disabling pain
+                                IndicationId: 85E212BC49A78F11
+                                BulletStatus: '1'
+                                Selected: 'False'
+                                logic_type: ''
+                                type: ''
+                                intro: ''
+                              - Content: Functional disability
+                                IndicationId: CBCEFE8095B0DAB9
+                                BulletStatus: '1'
+                                Selected: 'False'
+                                logic_type: ''
+                                type: ''
+                                intro: ''
+                            IndicationId: 76ED5EB736DAB43C
+                            BulletStatus: '2'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                        IndicationId: F1CFC1157962C1F3
+                        BulletStatus: '2'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Failure of previous proximal tibial or distal femoral osteotomy (7)
+                        IndicationId: D9E9104ABD48B3ED
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Posttraumatic knee joint destruction
+                        IndicationId: F8EDD31510D0A2F2
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Distal femur fracture or tibial plateau fracture in patient with osteoporosis (8) (9)
+                        IndicationId: 3F639D0886F5C7E6
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Limb salvage for malignancy (10)
+                        IndicationId: 6E5685BB963AE549
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Congenital deformity (11)
+                        IndicationId: F023C97A3CDB20FB
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Hemophilic arthropathy (12)
+                        IndicationId: 8C31772570DFB19F
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Pigmented villonodular synovitis with joint destruction (13)
+                        IndicationId: 8678AD85918E8B45
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: 'Replacement (revision) of previous arthroplasty, as indicated by ...  (14) (15) (16):'
+                        Indication:
+                          - Content: Disabling pain
+                            IndicationId: 85E212BC49A78F11
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Functional disability
+                            IndicationId: CBCEFE8095B0DAB9
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Progressive and substantial bone loss (osteolysis) (17)
+                            IndicationId: 6E99CA7593E198B8
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Dislocation of patella
+                            IndicationId: A52C4ECD0790AC63
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Aseptic component instability (18)
+                            IndicationId: 60C12321081444AC
+                            BulletStatus: '1'
+                            Selected: 'True'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Tissue or systemic reaction to metal implant (19)
+                            IndicationId: E9F8A5E6A4CD194A
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Infection (20) (21) (22)
+                            IndicationId: C6CABDDE21284E33
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Periprosthetic fracture (23) (24) (25)
+                            IndicationId: 04A08944B99C076A
+                            BulletStatus: '1'
+                            Selected: 'True'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Previous unicompartmental (unicondylar or patellofemoral) arthroplasty with destructive joint disease progression in unoperated compartment (1)
+                            IndicationId: A0FE1057E300BC8C
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                        IndicationId: 59F7A040E7CDBFD7
+                        BulletStatus: '2'
+                        Selected: 'True'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                    IndicationId: 7AEB32D7BD8E52C7
+                    BulletStatus: '2'
+                    Selected: 'True'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+            Type: All
+        WorkQueue:
+          - WorkQueueID: '2'
+            Action: Modify
+            ReviewStatus: In Primary Review
+            ReviewerUser: ''
+            ActionUser: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+            ActionDate: '2022-06-16T18:09:29.000'
+            ActionDateStr: '6/16/2022 6:09 PM GMT'
+            Active: '1'
+            PendNote: ''

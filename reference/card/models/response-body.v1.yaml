@@ -1,0 +1,942 @@
+type: object
+x-stoplight:
+  id: 2584414b7d7e0
+x-examples:
+  Examples:
+    $ref: ./examples/response-body.v1.json
+examples:
+  - Authorization:
+      RequestingProvider:
+        ProviderId: PRO-00000002
+        FirstName: Chelsey
+        LastName: Watts
+        IsPcp: 'true'
+        IsAttending: 'true'
+        IsAdmitting: 'true'
+        BusinessPhone: ''
+        FaxNumber: ''
+        Email: ''
+        Address: 1249  Middleville Road
+        City: MARTHAVILLE
+        State: Louisiana
+        PostalCode: '71450'
+        NPI: ''
+      Contact:
+        FirstName: ''
+        LastName: ''
+        FaxNumber: ''
+        PhoneNumber: ''
+      RequestStatus: Pended
+      RequestStatusCode: '04'
+      AuthRequestSubmitStatusText: Submitted
+      LengthOfStay: '0'
+      ApprovedLengthOfStay: '0'
+      Urgent: 'False'
+      AdmissionType: ''
+      SubmitDate: '2022-06-16T18:09:34.000'
+      SubmitDateStr: '6/16/2022 6:09 PM GMT'
+      UpdateDate: '2022-06-16T00:00:00.000'
+      UpdateDateStr: 6/16/2022
+      CompleteStatus: 'False'
+      CompleteDateStr: ''
+      ContactPhoneNumber: ''
+      SiteOfServiceCode: ''
+      SiteOfServiceName: ''
+      OONReason: ''
+      ServiceTypeCode: ''
+      ServiceTypeName: ''
+      LatestReviewID: ''
+      TransactionID: 42a2e6bb-78a2-4be7-9033-5f0791903066
+      RequestType: Procedure Pre-authorization
+      RequestedLevelOfCare: Inpatient
+      RequestedLevelOfCareCode: '1'
+      RequestedLevelOfCareUnit: Days
+      ApprovedLevelOfCare: ''
+      ApprovedLevelOfCareCode: ''
+      ApprovedLevelOfCareUnit: ''
+      AppealDateStr: ''
+      AppealDeterminationDateStr: ''
+      AuthorizationCode:
+        - Code: M97.11XA
+          CodeType: ICD-10 Diagnosis
+          EpisodeCodeIDSource: 1B60550E-8824-4636-A1E1-67737D8CE8BB
+          RequestedCodeUnits: '0'
+          ApprovedCodeUnits: '0'
+          HSIMCode: 0111250a
+          TreatmentType: ''
+          CodeModifier: ''
+          ServiceStartDateStr: ''
+          ServiceEndDateStr: ''
+          ApprovedServiceStartDateStr: ''
+          ApprovedServiceEndDateStr: ''
+          IsPrimary: 'true'
+          Status: NoDecisionYet
+        - Code: '27447'
+          CodeType: CPT/HCPCS
+          EpisodeCodeIDSource: 12CD388C-1200-4D81-9F98-00643CEC5551
+          RequestedCodeUnits: '0'
+          ApprovedCodeUnits: '0'
+          HSIMCode: 0111250a
+          TreatmentType: ''
+          CodeModifier: ''
+          ServiceStartDateStr: ''
+          ServiceEndDateStr: ''
+          ApprovedServiceStartDateStr: ''
+          ApprovedServiceEndDateStr: ''
+          IsPrimary: 'true'
+          Status: NoDecisionYet
+    Patient:
+      PatientId: PAT-00000002
+      FirstName: Nancy
+      LastName: Nunise
+      Gender: Female
+      DateOfBirth: '1943-01-01'
+      DateOfBirthStr: 1/1/1943
+      HomePhone: ''
+      BusinessPhone: ''
+      FaxNumber: ''
+      CellPhone: ''
+      Email: ''
+      Address: 33 East Ave
+      City: Mounds
+      State: Oklahoma
+      PostalCode: '74047'
+      CountryCode: ''
+      Characteristics: ''
+      NHSNo: ''
+      SSN: ''
+      BenefitPlanName: ''
+      BenefitProduct: ''
+      BenefitGroupID: ''
+      BenefitMemberID: ''
+      BenefitEligibilityDateStr: ''
+      BenefitDisenrollmentDateStr: ''
+      PatientGroupID: ''
+      PatientMemberID: ''
+      LineOfBusinessName: ''
+      MRN: ''
+    Facility:
+      FacilityId: FAC-00000002
+      Name: Waterbury Hospital
+      IshospitalFacility: 'true'
+      IsrecoveryFacility: 'true'
+      BusinessPhone: ''
+      FaxNumber: ''
+      Address: 773  Wiseman Street
+      City: Knoxville
+      State: Tennessee
+      PostalCode: '37909'
+      TaxID: ''
+      NPI: ''
+    AttendingProvider:
+      ProviderId: PRO-00000003
+      FirstName: Arnold
+      LastName: Meza
+      IsPcp: 'true'
+      IsAttending: 'true'
+      IsAdmitting: 'true'
+      BusinessPhone: ''
+      FaxNumber: ''
+      Email: ''
+      Address: 4435 Bird Spring Lane
+      City: Houston
+      State: Texas
+      PostalCode: '77077'
+      NPI: ''
+    EpisodeId: EPS-00000002
+    EncounterId: ''
+    Originator: ''
+    AdmitDateStr: ''
+    AdmitTimeStr: ''
+    RequestedAdmitDate: '2021-08-02'
+    RequestedAdmitDateStr: 8/2/2021
+    ReviewerName: 'Etipakam, Kanakaiah'
+    UpdateDate: '2022-06-16T18:09:32.000'
+    UpdateDateStr: '6/16/2022 6:09 PM GMT'
+    EpisodeState: In Primary Review
+    CreateUser: 'Etipakam, Kanakaiah'
+    CreateDate: '2022-06-16T18:09:13.000'
+    CreateDateStr: '6/16/2022 6:09 PM GMT'
+    DischargeDateStr: ''
+    NextReviewDateStr: ''
+    ExpectedDischargeDateStr: ''
+    AuthRequestStatus: Pended
+    PointOfCare: ''
+    Floor: ''
+    Building: ''
+    Room: ''
+    Bed: ''
+    RiskScore: ''
+    AdvisorReferralDisclaimer: ''
+    ArrivalDateStr: ''
+    ObservationDateStr: ''
+    Attachment:
+      - AttachmentId: E9ECB395-A1FD-448D-960B-BAC8B546F072
+        FileName: 'MCG_Clinical_Summary_2022-06-16T18:08:28.203Z.pdf'
+        FileDescription: ''
+        ReviewId: ''
+        ReviewTypeCode: ''
+        ReviewTypeName: ''
+        InsertDateLocal: '6/16/2022 6:09 PM GMT'
+        InsertDate: '2022-06-16T18:09:27.000'
+        InsertByName: 'Etipakam, Kanakaiah'
+    EpisodeCode:
+      - CodeCategory: Diagnosis
+        CodeType: ICD-10 Diagnosis
+        Code: M97.11XA
+        CodeDescription: ''
+        PresentOnAdmission: '0'
+        Primary: 'True'
+        EpisodeCodeIDSource: 1B60550E-8824-4636-A1E1-67737D8CE8BB
+      - CodeCategory: Procedure
+        CodeType: CPT/HCPCS
+        Code: '27447'
+        CodeDescription: ''
+        PresentOnAdmission: '0'
+        Primary: 'True'
+        EpisodeCodeIDSource: 12CD388C-1200-4D81-9F98-00643CEC5551
+    Guideline:
+      - HSIM: 0111250a
+        OrgOtg: S-700
+        Los: A-1 (PO)
+        GuidelineName: 'Knee Arthroplasty, Total'
+        Version: MCG 26th Edition
+        Publication: Inpatient and Surgical Care
+        PubCode: ISC
+        AddUser: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+        AddDate: '2022-06-16'
+        AddDateStr: 6/16/2022
+        InsertDate: '2022-06-16T18:09:29.000'
+        InsertDateStr: '6/16/2022 6:09 PM GMT'
+        NextReviewDateStr: ''
+        IsCustom: 'False'
+        CustomDisclaimer: ''
+        CustomDisclaimerNote: ''
+        IsMCR: 'False'
+        MCRDisclaimer: ''
+        Outline:
+          - SectionTitle: Clinical Indications for Procedure
+            Status: Documented
+            UpdateDate: '2022-06-16T18:09:32.000'
+            UpdateDateStr: '6/16/2022 6:09 PM GMT'
+            ReviewerName: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+            logic_type: '2'
+            admissionsupportdef_id: ''
+            HSIM: 0111250a
+            IsPrimary: 'False'
+            IndicationMetStr: Indications Met
+            Path: /Care_Planning_-_Inpatient_Admission_and_Alternatives/Clinical_Indications_for_Procedure
+            Indication:
+              - Content: 'Procedure is indicated for ...  (1) (2) (3):'
+                Indication:
+                  - Content: 'Degenerative joint disease, as indicated by ...  (4) (5) (6):'
+                    Indication:
+                      - Content: 'Presence of significant radiographic findings, which may include knee joint destruction, angular deformity, or severe narrowing'
+                        IndicationId: 5DB0D0DA537908E5
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: 'Optimal medical management has been tried and failed (eg, weight loss, analgesics, NSAIDs, physical therapy, activity modification).'
+                        IndicationId: DE330A145C60953E
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: 'Patient has failed or is not candidate for more conservative measures (eg, osteotomy).'
+                        IndicationId: 122E41C63B98DF21
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: 'Treatment indicated due to ... :'
+                        Indication:
+                          - Content: Disabling pain
+                            IndicationId: 85E212BC49A78F11
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                          - Content: Functional disability
+                            IndicationId: CBCEFE8095B0DAB9
+                            BulletStatus: '1'
+                            Selected: 'False'
+                            logic_type: ''
+                            type: ''
+                            intro: ''
+                        IndicationId: 76ED5EB736DAB43C
+                        BulletStatus: '2'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                    IndicationId: F1CFC1157962C1F3
+                    BulletStatus: '2'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Failure of previous proximal tibial or distal femoral osteotomy (7)
+                    IndicationId: D9E9104ABD48B3ED
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Posttraumatic knee joint destruction
+                    IndicationId: F8EDD31510D0A2F2
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Distal femur fracture or tibial plateau fracture in patient with osteoporosis (8) (9)
+                    IndicationId: 3F639D0886F5C7E6
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Limb salvage for malignancy (10)
+                    IndicationId: 6E5685BB963AE549
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Congenital deformity (11)
+                    IndicationId: F023C97A3CDB20FB
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Hemophilic arthropathy (12)
+                    IndicationId: 8C31772570DFB19F
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: Pigmented villonodular synovitis with joint destruction (13)
+                    IndicationId: 8678AD85918E8B45
+                    BulletStatus: '1'
+                    Selected: 'False'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                  - Content: 'Replacement (revision) of previous arthroplasty, as indicated by ...  (14) (15) (16):'
+                    Indication:
+                      - Content: Disabling pain
+                        IndicationId: 85E212BC49A78F11
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Functional disability
+                        IndicationId: CBCEFE8095B0DAB9
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Progressive and substantial bone loss (osteolysis) (17)
+                        IndicationId: 6E99CA7593E198B8
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Dislocation of patella
+                        IndicationId: A52C4ECD0790AC63
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Aseptic component instability (18)
+                        IndicationId: 60C12321081444AC
+                        BulletStatus: '1'
+                        Selected: 'True'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Tissue or systemic reaction to metal implant (19)
+                        IndicationId: E9F8A5E6A4CD194A
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Infection (20) (21) (22)
+                        IndicationId: C6CABDDE21284E33
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Periprosthetic fracture (23) (24) (25)
+                        IndicationId: 04A08944B99C076A
+                        BulletStatus: '1'
+                        Selected: 'True'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                      - Content: Previous unicompartmental (unicondylar or patellofemoral) arthroplasty with destructive joint disease progression in unoperated compartment (1)
+                        IndicationId: A0FE1057E300BC8C
+                        BulletStatus: '1'
+                        Selected: 'False'
+                        logic_type: ''
+                        type: ''
+                        intro: ''
+                    IndicationId: 59F7A040E7CDBFD7
+                    BulletStatus: '2'
+                    Selected: 'True'
+                    logic_type: ''
+                    type: ''
+                    intro: ''
+                IndicationId: 7AEB32D7BD8E52C7
+                BulletStatus: '2'
+                Selected: 'True'
+                logic_type: ''
+                type: ''
+                intro: ''
+        Type: All
+    WorkQueue:
+      - WorkQueueID: '2'
+        Action: Modify
+        ReviewStatus: In Primary Review
+        ReviewerUser: ''
+        ActionUser: 'Etipakam, Kanakaiah, Etipakam, Kanakaiah'
+        ActionDate: '2022-06-16T18:09:29.000'
+        ActionDateStr: '6/16/2022 6:09 PM GMT'
+        Active: '1'
+        PendNote: ''
+properties:
+  Authorization:
+    type: object
+    properties:
+      RequestingProvider:
+        type: object
+        properties:
+          ProviderId:
+            type: string
+          FirstName:
+            type: string
+          LastName:
+            type: string
+          IsPcp:
+            type: string
+          IsAttending:
+            type: string
+          IsAdmitting:
+            type: string
+          BusinessPhone:
+            type: string
+          FaxNumber:
+            type: string
+          Email:
+            type: string
+          Address:
+            type: string
+          City:
+            type: string
+          State:
+            type: string
+          PostalCode:
+            type: string
+          NPI:
+            type: string
+      Contact:
+        type: object
+        properties:
+          FirstName:
+            type: string
+          LastName:
+            type: string
+          FaxNumber:
+            type: string
+          PhoneNumber:
+            type: string
+      RequestStatus:
+        type: string
+      RequestStatusCode:
+        type: string
+      AuthRequestSubmitStatusText:
+        type: string
+      LengthOfStay:
+        type: string
+      ApprovedLengthOfStay:
+        type: string
+      Urgent:
+        type: string
+      AdmissionType:
+        type: string
+      SubmitDate:
+        type: string
+      SubmitDateStr:
+        type: string
+      UpdateDate:
+        type: string
+      UpdateDateStr:
+        type: string
+      CompleteStatus:
+        type: string
+      CompleteDateStr:
+        type: string
+      ContactPhoneNumber:
+        type: string
+      SiteOfServiceCode:
+        type: string
+      SiteOfServiceName:
+        type: string
+      OONReason:
+        type: string
+      ServiceTypeCode:
+        type: string
+      ServiceTypeName:
+        type: string
+      LatestReviewID:
+        type: string
+      TransactionID:
+        type: string
+      RequestType:
+        type: string
+      RequestedLevelOfCare:
+        type: string
+      RequestedLevelOfCareCode:
+        type: string
+      RequestedLevelOfCareUnit:
+        type: string
+      ApprovedLevelOfCare:
+        type: string
+      ApprovedLevelOfCareCode:
+        type: string
+      ApprovedLevelOfCareUnit:
+        type: string
+      AppealDateStr:
+        type: string
+      AppealDeterminationDateStr:
+        type: string
+      AuthorizationCode:
+        type: array
+        items:
+          type: object
+          properties:
+            Code:
+              type: string
+            CodeType:
+              type: string
+            EpisodeCodeIDSource:
+              type: string
+            RequestedCodeUnits:
+              type: string
+            ApprovedCodeUnits:
+              type: string
+            HSIMCode:
+              type: string
+            TreatmentType:
+              type: string
+            CodeModifier:
+              type: string
+            ServiceStartDateStr:
+              type: string
+            ServiceEndDateStr:
+              type: string
+            ApprovedServiceStartDateStr:
+              type: string
+            ApprovedServiceEndDateStr:
+              type: string
+            IsPrimary:
+              type: string
+            Status:
+              type: string
+  Patient:
+    type: object
+    properties:
+      PatientId:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      Gender:
+        type: string
+      DateOfBirth:
+        type: string
+      DateOfBirthStr:
+        type: string
+      HomePhone:
+        type: string
+      BusinessPhone:
+        type: string
+      FaxNumber:
+        type: string
+      CellPhone:
+        type: string
+      Email:
+        type: string
+      Address:
+        type: string
+      City:
+        type: string
+      State:
+        type: string
+      PostalCode:
+        type: string
+      CountryCode:
+        type: string
+      Characteristics:
+        type: string
+      NHSNo:
+        type: string
+      SSN:
+        type: string
+      BenefitPlanName:
+        type: string
+      BenefitProduct:
+        type: string
+      BenefitGroupID:
+        type: string
+      BenefitMemberID:
+        type: string
+      BenefitEligibilityDateStr:
+        type: string
+      BenefitDisenrollmentDateStr:
+        type: string
+      PatientGroupID:
+        type: string
+      PatientMemberID:
+        type: string
+      LineOfBusinessName:
+        type: string
+      MRN:
+        type: string
+  Facility:
+    type: object
+    properties:
+      FacilityId:
+        type: string
+      Name:
+        type: string
+      IshospitalFacility:
+        type: string
+      IsrecoveryFacility:
+        type: string
+      BusinessPhone:
+        type: string
+      FaxNumber:
+        type: string
+      Address:
+        type: string
+      City:
+        type: string
+      State:
+        type: string
+      PostalCode:
+        type: string
+      TaxID:
+        type: string
+      NPI:
+        type: string
+  AttendingProvider:
+    type: object
+    properties:
+      ProviderId:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      IsPcp:
+        type: string
+      IsAttending:
+        type: string
+      IsAdmitting:
+        type: string
+      BusinessPhone:
+        type: string
+      FaxNumber:
+        type: string
+      Email:
+        type: string
+      Address:
+        type: string
+      City:
+        type: string
+      State:
+        type: string
+      PostalCode:
+        type: string
+      NPI:
+        type: string
+  EpisodeId:
+    type: string
+  EncounterId:
+    type: string
+  Originator:
+    type: string
+  AdmitDateStr:
+    type: string
+  AdmitTimeStr:
+    type: string
+  RequestedAdmitDate:
+    type: string
+  RequestedAdmitDateStr:
+    type: string
+  ReviewerName:
+    type: string
+  UpdateDate:
+    type: string
+  UpdateDateStr:
+    type: string
+  EpisodeState:
+    type: string
+  CreateUser:
+    type: string
+  CreateDate:
+    type: string
+  CreateDateStr:
+    type: string
+  DischargeDateStr:
+    type: string
+  NextReviewDateStr:
+    type: string
+  ExpectedDischargeDateStr:
+    type: string
+  AuthRequestStatus:
+    type: string
+  PointOfCare:
+    type: string
+  Floor:
+    type: string
+  Building:
+    type: string
+  Room:
+    type: string
+  Bed:
+    type: string
+  RiskScore:
+    type: string
+  AdvisorReferralDisclaimer:
+    type: string
+  ArrivalDateStr:
+    type: string
+  ObservationDateStr:
+    type: string
+  Attachment:
+    type: array
+    items:
+      type: object
+      properties:
+        AttachmentId:
+          type: string
+        FileName:
+          type: string
+        FileDescription:
+          type: string
+        ReviewId:
+          type: string
+        ReviewTypeCode:
+          type: string
+        ReviewTypeName:
+          type: string
+        InsertDateLocal:
+          type: string
+        InsertDate:
+          type: string
+        InsertByName:
+          type: string
+  EpisodeCode:
+    type: array
+    items:
+      type: object
+      properties:
+        CodeCategory:
+          type: string
+        CodeType:
+          type: string
+        Code:
+          type: string
+        CodeDescription:
+          type: string
+        PresentOnAdmission:
+          type: string
+        Primary:
+          type: string
+        EpisodeCodeIDSource:
+          type: string
+  Guideline:
+    type: array
+    items:
+      type: object
+      properties:
+        HSIM:
+          type: string
+        OrgOtg:
+          type: string
+        Los:
+          type: string
+        GuidelineName:
+          type: string
+        Version:
+          type: string
+        Publication:
+          type: string
+        PubCode:
+          type: string
+        AddUser:
+          type: string
+        AddDate:
+          type: string
+        AddDateStr:
+          type: string
+        InsertDate:
+          type: string
+        InsertDateStr:
+          type: string
+        NextReviewDateStr:
+          type: string
+        IsCustom:
+          type: string
+        CustomDisclaimer:
+          type: string
+        CustomDisclaimerNote:
+          type: string
+        IsMCR:
+          type: string
+        MCRDisclaimer:
+          type: string
+        Outline:
+          type: array
+          items:
+            type: object
+            properties:
+              SectionTitle:
+                type: string
+              Status:
+                type: string
+              UpdateDate:
+                type: string
+              UpdateDateStr:
+                type: string
+              ReviewerName:
+                type: string
+              logic_type:
+                type: string
+              admissionsupportdef_id:
+                type: string
+              HSIM:
+                type: string
+              IsPrimary:
+                type: string
+              IndicationMetStr:
+                type: string
+              Path:
+                type: string
+              Indication:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Content:
+                      type: string
+                    Indication:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Content:
+                            type: string
+                          Indication:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                Content:
+                                  type: string
+                                IndicationId:
+                                  type: string
+                                BulletStatus:
+                                  type: string
+                                Selected:
+                                  type: string
+                                logic_type:
+                                  type: string
+                                type:
+                                  type: string
+                                intro:
+                                  type: string
+                                Indication:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      Content:
+                                        type: string
+                                      IndicationId:
+                                        type: string
+                                      BulletStatus:
+                                        type: string
+                                      Selected:
+                                        type: string
+                                      logic_type:
+                                        type: string
+                                      type:
+                                        type: string
+                                      intro:
+                                        type: string
+                          IndicationId:
+                            type: string
+                          BulletStatus:
+                            type: string
+                          Selected:
+                            type: string
+                          logic_type:
+                            type: string
+                          type:
+                            type: string
+                          intro:
+                            type: string
+                    IndicationId:
+                      type: string
+                    BulletStatus:
+                      type: string
+                    Selected:
+                      type: string
+                    logic_type:
+                      type: string
+                    type:
+                      type: string
+                    intro:
+                      type: string
+        Type:
+          type: string
+  WorkQueue:
+    type: array
+    items:
+      type: object
+      properties:
+        WorkQueueID:
+          type: string
+        Action:
+          type: string
+        ReviewStatus:
+          type: string
+        ReviewerUser:
+          type: string
+        ActionUser:
+          type: string
+        ActionDate:
+          type: string
+        ActionDateStr:
+          type: string
+        Active:
+          type: string
+        PendNote:
+          type: string

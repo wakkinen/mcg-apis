@@ -1,0 +1,104 @@
+{
+    "apiUser": "Etipakam, Kanakaiah",
+    "requestType": "Procedure Pre-authorization",
+    "applicationSource": "Collaborative Care",
+    "levelOfCare": "Inpatient",
+    "dateOfService": "2021-08-02T07:15:00+00:00",
+    "customEpisodeId": null,
+    "lineOfBusiness": null,
+    "patient": {
+      "mrn": null,
+      "firstName": "Nancy",
+      "lastName": "Nunise",
+      "dateOfBirth": "1943-01-01",
+      "address": {
+        "address1": "33 East Ave",
+        "address2": null,
+        "city": "Mounds",
+        "state": "OK",
+        "zipCode": "74047"
+      },
+      "gender": "Female"
+    },
+    "requestingProvider": {
+      "id": null,
+      "firstName": "Chelsey",
+      "lastName": "Watts",
+      "address": {
+        "address1": "1249  Middleville Road",
+        "address2": null,
+        "city": "MARTHAVILLE",
+        "state": "Louisiana",
+        "zipCode": "71450"
+      },
+      "npi": null
+    },
+    "attendingProvider": {
+      "id": null,
+      "firstName": "Arnold",
+      "lastName": "Meza",
+      "address": {
+        "address1": "4435 Bird Spring Lane",
+        "address2": null,
+        "city": "Houston",
+        "state": "Texas",
+        "zipCode": "77077"
+      },
+      "npi": null
+    },
+    "facility": {
+      "id": null,
+      "facilityName": "Waterbury Hospital",
+      "address": {
+        "address1": "773  Wiseman Street",
+        "address2": null,
+        "city": "Knoxville",
+        "state": "Tennessee",
+        "zipCode": "37909"
+      },
+      "npi": null
+    },
+    "diagnoses": [
+      {
+        "hsim": "0010111250a",
+        "code": "M97.11XA",
+        "codeType": "ICD10-D",
+        "isPrimary": true
+      }
+    ],
+    "procedures": [
+      {
+        "hsim": "0010111250a",
+        "code": "27447",
+        "codeType": "CPT",
+        "isPrimary": true
+      }
+    ],
+    "guidelines": [
+      {
+        "contentOwner": "GA",
+        "edition": "26.0",
+        "guidelineTitle": null,
+        "product": "ISC",
+        "hsim": "0010111250a",
+        "outline": {
+          "indications": [
+            { "id": "04A08944B99C076A", "selected": true, "notes": [] },
+            { "id": "59F7A040E7CDBFD7", "selected": true, "notes": [] },
+            { "id": "7AEB32D7BD8E52C7", "selected": true, "notes": [] },
+            { "id": "60C12321081444AC", "selected": true, "notes": [] }
+          ],
+          "outlineNotes": null
+        }
+      }
+    ],
+    "attachments": [
+      {
+        "ID": "20D767E5-4B90-4BD5-9ED0-2554CFB8ACED",
+        "FileName": "MCG_Clinical_Summary_2022-06-16T17:54:49.852Z.pdf"
+      }
+    ],
+    "notes": null,
+    "authNotes": null
+  }
+  
